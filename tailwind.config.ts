@@ -32,9 +32,8 @@ const config: Config = {
         purpleHover: "#BB86FC",
         BlueFF: "#1A49FF",
         //Custom colors
-        mainblue: "#3696b4",
-        mainpink: "#ac192c",
-        mainyellow: "#F2C123",
+        maingreen: "#1e7147",
+        mainyellow: "#ff0",
       },
 
       // custom

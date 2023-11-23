@@ -297,52 +297,24 @@ export const ToolsTipsSocialMediaItems = [
 
 export const TypeProductItems = [
   {
-    label: "Hàng Đông Lạnh",
-    value: "hang-dong-lanh",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/taphoa-605ab.appspot.com/o/category_20210729151250_0.png?alt=media&token=797e56cf-afbf-4cea-a9e7-a8e131049a41",
+    label: "Rau Sạch",
+    value: "rau-sach",
   },
   {
-    label: "Hải Sản Tươi Sống",
-    value: "hai-san-tuoi-song",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/taphoa-605ab.appspot.com/o/category_20210729151303_0.png?alt=media&token=b9d15971-d65b-4209-bf3e-4f9221e01594",
+    label: "Thịt Sạch",
+    value: "thit-sach",
   },
   {
-    label: "Thực phẩm Việt Nam",
-    value: "thuc-pham-viet-nam",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/taphoa-605ab.appspot.com/o/category_20210729151315_0.png?alt=media&token=70925ed8-b2fd-41fc-8f82-cfcb715da692",
+    label: "Thủy-Hải sản",
+    value: "thuy-hai-san",
   },
   {
-    label: "Rau Củ Quả",
-    value: "rau-cu-qua",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/taphoa-605ab.appspot.com/o/category_20210729151331_0.png?alt=media&token=03174078-0864-4c6b-b6e1-8612985e3b59",
+    label: "Hoa Quả sạch",
+    value: "hoa-qua-sach",
   },
   {
-    label: "Đồ Ăn Vặt",
-    value: "do-an-vat",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/taphoa-605ab.appspot.com/o/category_20210729151331_0.png?alt=media&token=03174078-0864-4c6b-b6e1-8612985e3b59",
-  },
-  {
-    label: "Nước Uống",
-    value: "nuoc-uong",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/taphoa-605ab.appspot.com/o/category_20210729151342_0.png?alt=media&token=8792cda1-7f18-4707-b213-fc1f2c9046f7",
-  },
-  {
-    label: "Thực Phẩm Hàng Thái Nhật",
-    value: "thuc-pham-hang-thai-nhat",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/taphoa-605ab.appspot.com/o/category_20210729151408_0.png?alt=media&token=1eaddc53-8e6f-4199-8a92-2dfa83605197",
-  },
-  {
-    label: "Tiện Ích Gia Đình",
-    value: "tien-ich-gia-dinh",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/taphoa-605ab.appspot.com/o/category_20210729151420_0.png?alt=media&token=8c81d8d3-b549-4492-8c8b-48cd92c9aa56",
+    label: "Đặc sản 3 miền",
+    value: "dac-san-3-mien",
   },
 ];
 
