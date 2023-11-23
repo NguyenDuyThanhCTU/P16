@@ -320,24 +320,20 @@ export const TypeProductItems = [
 
 export const TypePostItems = [
   {
-    label: "Bài Viết",
-    value: "News",
+    label: "Tin tức chung",
+    value: "tin-tuc-chung",
   },
   {
-    label: "Giao nhận hàng",
-    value: "Policy",
+    label: "Binh đoàn thực phẩm sạch tiên phong",
+    value: "binh-doan-thuc-pham-sach-tien-phong",
   },
   {
-    label: "Chính sách đổi trả",
-    value: "Policy",
+    label: "Danh Mục Thực Phẩm",
+    value: "danh-muc-thuc-pham",
   },
   {
-    label: "Chính sách đặt hàng",
-    value: "Policy",
-  },
-  {
-    label: "Chính sách bảo mật",
-    value: "Policy",
+    label: " Món Ngon",
+    value: "mon-ngon",
   },
 ];
 
@@ -357,26 +353,6 @@ export const PolicyItems = [
   {
     label: "Chính sách bảo mật",
     value: "chinh-sach-bao-mat",
-  },
-];
-
-export const ProductTypeItems = [
-  {
-    label: "Sản phẩm mới",
-    value: "",
-  },
-  {
-    label: "Sản phẩm nổi bật",
-    value: "",
-  },
-
-  {
-    label: "Sản phẩm bán chạy",
-    value: "",
-  },
-  {
-    label: "Sản phẩm khuyến mãi",
-    value: "",
   },
 ];
 

@@ -105,15 +105,14 @@ const UploadPost: React.FC = () => {
         </div>
         <div className="h-[250px] text-black w-full">
           <div>
-            {(url === "cong-trinh-thuc-te" || url === "dich-vu") && (
-              <Input
-                text="Tiêu đề bài viết"
-                Value={Topic}
-                setValue={setTopic}
-                Input={true}
-                PlaceHolder=""
-              />
-            )}
+            <Input
+              text="Tiêu đề bài viết"
+              Value={Topic}
+              setValue={setTopic}
+              Input={true}
+              PlaceHolder=""
+            />
+
             <div className="flex flex-col gap-2 mb-2">
               <label className="text-md font-medium ">Loại bài viết:</label>
               <select
@@ -132,63 +131,48 @@ const UploadPost: React.FC = () => {
                 ))}
               </select>
             </div>
-            {(url === "cong-trinh-thuc-te" || url === "dich-vu") && (
-              <>
-                {" "}
-                <div className="flex gap-5  items-end ">
-                  <Input
-                    text="Liên kết hình ảnh"
-                    Value={imageUrl}
-                    setValue={setImageUrl}
-                    Input={true}
-                    PlaceHolder=""
-                  />
+            <>
+              {" "}
+              <div className="flex gap-5  items-end ">
+                <Input
+                  text="Liên kết hình ảnh"
+                  Value={imageUrl}
+                  setValue={setImageUrl}
+                  Input={true}
+                  PlaceHolder=""
+                />
 
-                  <div>
-                    <label>
-                      <div className="cursor-pointer">
-                        <div className="flex gap-1 items-center p-2 px-4 bg-red-500 hover:bg-red-600 border text-white rounded-full">
-                          <AiOutlineCloudUpload className="text-[32px] " />
-                        </div>
-
-                        <input
-                          type="file"
-                          className="w-0 h-0"
-                          onChange={(e) => HandleUploadImage(e, "posts")}
-                        />
+                <div>
+                  <label>
+                    <div className="cursor-pointer">
+                      <div className="flex gap-1 items-center p-2 px-4 bg-red-500 hover:bg-red-600 border text-white rounded-full">
+                        <AiOutlineCloudUpload className="text-[32px] " />
                       </div>
-                    </label>
-                  </div>
+
+                      <input
+                        type="file"
+                        className="w-0 h-0"
+                        onChange={(e) => HandleUploadImage(e, "posts")}
+                      />
+                    </div>
+                  </label>
                 </div>
-              </>
-            )}
+              </div>
+            </>
           </div>
         </div>
 
         <div className="flex gap-5 mt-2">
-          {url === "cong-trinh-thuc-te" || url === "dich-vu" ? (
-            <>
-              <div
-                className="px-10 py-3 rounded-xl border-2 border-blue-500 bg-blue-500 text-white hover:bg-blue-700 duration-300 hover:border-blue-700 cursor-pointer"
-                onClick={() => {
-                  HandleUploadPosts();
-                }}
-              >
-                Tiếp tục
-              </div>
-            </>
-          ) : (
-            <>
-              <div
-                className="px-10 py-3 rounded-xl border-2 border-blue-500 bg-blue-500 text-white hover:bg-blue-700 duration-300 hover:border-blue-700 cursor-pointer"
-                onClick={() => {
-                  HandleContinue();
-                }}
-              >
-                Tiếp tục
-              </div>
-            </>
-          )}
+          <>
+            <div
+              className="px-10 py-3 rounded-xl border-2 border-blue-500 bg-blue-500 text-white hover:bg-blue-700 duration-300 hover:border-blue-700 cursor-pointer"
+              onClick={() => {
+                HandleUploadPosts();
+              }}
+            >
+              Tiếp tục
+            </div>
+          </>
         </div>
       </div>
     </div>

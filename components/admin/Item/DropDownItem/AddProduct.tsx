@@ -15,12 +15,9 @@ import {
   uploadImage,
 } from "@components/items/server-items/Handle";
 import { addDocument } from "@config/Services/Firebase/FireStoreDB";
-import {
-  ProductFunctionType,
-  ProductPriceItems,
-  TypeProductItems,
-} from "@assets/item";
+
 import TextEditor from "@components/admin/Item/CKEditor/TextEditor";
+import { TypeProductItems } from "@assets/item";
 
 const AddProduct = ({}) => {
   const [imageUrl, setImageUrl] = useState<string | undefined>();
@@ -168,23 +165,6 @@ const AddProduct = ({}) => {
     setImageUrl(newImageUrl);
   };
 
-  const handleOption = (values: any, type: string) => {
-    if (type === "function") {
-      const sort = ProductFunctionType.filter(
-        (items: any) => items.value === values
-      );
-      setProductFunction(sort[0].label);
-      setProductFunctionUrl(sort[0].value);
-    } else {
-      const sort = ProductPriceItems.filter(
-        (items: any) => items.value === values
-      );
-
-      setProductPrice(sort[0].label);
-      setProductPriceUrl(sort[0].value);
-    }
-  };
-
   return (
     <div
       className={`bg-[rgba(0,0,0,0.3)] w-full 
@@ -233,7 +213,7 @@ const AddProduct = ({}) => {
             </div>
             <div className="  flex flex-col gap-3">
               <Input text="Tên sản phẩm" Value={Title} setValue={setTitle} />
-              <Input text="Giá sản phẩm" Value={Price} setValue={setPrice} />
+              {/* <Input text="Giá sản phẩm" Value={Price} setValue={setPrice} /> */}
 
               <div className="">
                 <label>Thông tin sản phẩm</label>
@@ -303,45 +283,6 @@ const AddProduct = ({}) => {
                         </Option>
                       ))}
                   </Select>
-                </div>
-              </div>
-
-              <div className="  flex flex-col gap-3">
-                <div className="flex flex-col gap-2 w-full">
-                  <div className="flex flex-col gap-2">
-                    <label className="text-md font-medium ">
-                      Chức năng sản phẩm
-                    </label>
-                    <Select
-                      style={{ width: "100%" }}
-                      placeholder="Chọn loại bài viết"
-                      onChange={(e) => handleOption(e, "function")}
-                      optionLabelProp="label"
-                    >
-                      {ProductFunctionType.map((item: any, idx: any) => (
-                        <Option value={item.value} label={item.label} key={idx}>
-                          <Space>{item.label}</Space>
-                        </Option>
-                      ))}
-                    </Select>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <label className="text-md font-medium ">
-                      Phân khúc giá sản phẩm
-                    </label>
-                    <Select
-                      style={{ width: "100%" }}
-                      placeholder="Chọn loại bài viết"
-                      onChange={(e) => handleOption(e, "price")}
-                      optionLabelProp="label"
-                    >
-                      {ProductPriceItems.map((item: any, idx: any) => (
-                        <Option value={item.value} label={item.label} key={idx}>
-                          <Space>{item.label}</Space>
-                        </Option>
-                      ))}
-                    </Select>
-                  </div>
                 </div>
               </div>
             </div>

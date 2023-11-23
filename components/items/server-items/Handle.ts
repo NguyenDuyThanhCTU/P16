@@ -11,7 +11,7 @@ export const uploadImage = async (fileOrEvent: any, locate: any) => {
       selectImage = fileOrEvent;
     }
 
-    const filetypes = ["image/jpeg", "image/jpg", "image/png"];
+    const filetypes = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
 
     if (filetypes.includes(selectImage.type)) {
       const storage = getStorage();
