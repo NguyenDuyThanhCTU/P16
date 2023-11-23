@@ -13,7 +13,7 @@ const page = async () => {
           <Category Data={Data} />
         </div>
         <div className="col-span-3">
-          <Content />
+          <Content Data={Data} />
         </div>
       </div>
     </div>

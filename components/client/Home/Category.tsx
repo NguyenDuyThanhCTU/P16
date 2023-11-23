@@ -7,6 +7,8 @@ import { IoIosArrowDown, IoIosMenu } from "react-icons/io";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
+import { AiOutlineClockCircle, AiOutlineUser } from "react-icons/ai";
+import moment from "moment";
 
 const Category = ({ Data }: any) => {
   const [show, setShow] = React.useState<any>(0);
@@ -28,7 +30,7 @@ const Category = ({ Data }: any) => {
             alt="banner"
           />
         </div>
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-5 mt-2 py-5">
           <div>
             <img
               src="https://bizweb.dktcdn.net/100/371/178/themes/743610/assets/policy_1_image.png?1698827078537"
@@ -135,7 +137,7 @@ const Category = ({ Data }: any) => {
               TIN TỨC- BLOG
             </h2>
           </div>
-          <div className="border">
+          <div className="border mt-5">
             <Swiper
               spaceBetween={30}
               centeredSlides={true}
@@ -149,17 +151,53 @@ const Category = ({ Data }: any) => {
               className="mySwiper"
             >
               <div>
-                {Posts.map((item: any, idx: number) => (
-                  <SwiperSlide key={idx}>
-                    <div>
-                      <div>
-                        <img src={item.image} alt="post" />
+                {Posts.map((item: any, idx: number) => {
+                  const content = item?.content;
+                  const maxLength = 150;
+
+                  const truncatedContent = content
+                    ? content.substring(0, maxLength)
+                    : "";
+
+                  const markup = { __html: truncatedContent };
+                  const DetailPostDate = moment
+                    .unix(Data[0]?.createdAt.seconds)
+                    .format("MMMM DD, YYYY");
+                  return (
+                    <SwiperSlide key={idx}>
+                      <div className="cursor-pointer  ">
+                        <div className="h-[145px] w-full overflow-hidden">
+                          <img
+                            src={item.image}
+                            alt="post"
+                            className="object-contain h-full w-full hover:scale-110 duration-300"
+                          />
+                        </div>
+                        <div className="py-2 px-3 mt-2">
+                          <div className="font-semibold  ">{item.topic}</div>
+                          <div className="flex py-1 flex-col">
+                            <div className="flex items-center gap-1 text-gray-400 text-[14px]">
+                              <AiOutlineUser />
+                              <p className="">lachmarket.com</p>
+                            </div>
+                            <div className="flex items-center gap-1 text-gray-400 pr-5 text-[14px]">
+                              <AiOutlineClockCircle />
+                              <p className="">{DetailPostDate}</p>
+                            </div>
+                            {/* <div className="h-full w-1"></div> */}
+                          </div>
+                          <div
+                            dangerouslySetInnerHTML={markup}
+                            className="text-[15px] truncate3"
+                          ></div>
+                          <div className="text-redPrimmary  font-normal hover:scale-105 duration-300  cursor-pointer">
+                            [Đọc tiếp...]
+                          </div>
+                        </div>
                       </div>
-                      <div>{item.title}</div>
-                      <div></div>
-                    </div>
-                  </SwiperSlide>
-                ))}
+                    </SwiperSlide>
+                  );
+                })}
               </div>
             </Swiper>
           </div>
