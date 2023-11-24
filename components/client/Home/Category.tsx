@@ -9,10 +9,12 @@ import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { AiOutlineClockCircle, AiOutlineUser } from "react-icons/ai";
 import moment from "moment";
+import Link from "next/link";
 
-const Category = ({ Data }: any) => {
+const Category = () => {
   const [show, setShow] = React.useState<any>(0);
-  const { productTypes, Posts } = useData();
+  const { productTypes, Posts, Products } = useData();
+  console.log(Posts);
   const HandleShow = (idx: number) => {
     if (show === idx) {
       setShow(0);
@@ -24,24 +26,6 @@ const Category = ({ Data }: any) => {
   return (
     <>
       <div className="flex flex-col items-center gap-5">
-        <div>
-          <img
-            src="https://bizweb.dktcdn.net/100/371/178/themes/743610/assets/logo.png?1698827078537"
-            alt="banner"
-          />
-        </div>
-        <div className="flex items-center gap-5 mt-2 py-5">
-          <div>
-            <img
-              src="https://bizweb.dktcdn.net/100/371/178/themes/743610/assets/policy_1_image.png?1698827078537"
-              alt="slogan"
-            />
-          </div>
-          <div>
-            <h2 className="font-normal">Sơ chế tận tay</h2>
-            <p>Nhận ngay về nấu</p>
-          </div>
-        </div>
         <div className="w-full">
           <div className="bg-maingreen flex gap-3 justify-start items-center text-white w">
             <div className="h-14 w-1 bg-black"></div>
@@ -55,16 +39,20 @@ const Category = ({ Data }: any) => {
               const sort = productTypes.filter(
                 (type: any) => type.parent === item.label
               );
+
               return (
                 <div key={idx}>
                   <div
                     key={idx}
                     className="flex justify-between items-center py-3 bg-gray-100 border-b text-maingreen cursor-pointer hover:bg-gray-200"
                   >
-                    <div className="flex items-center ml-3 gap-2">
+                    <Link
+                      href={`/san-pham/${item.value}`}
+                      className="flex items-center ml-3 gap-2"
+                    >
                       <FaCaretRight />
                       <span className="font-semibold">{item.label}</span>
-                    </div>
+                    </Link>
                     {sort.length > 0 && (
                       <div className="mr-2" onClick={() => HandleShow(idx + 1)}>
                         <IoIosArrowDown />
@@ -76,12 +64,13 @@ const Category = ({ Data }: any) => {
                       className={`${show === idx + 1 ? "block" : "hidden"} `}
                     >
                       {sort.map((item: any, idx: number) => (
-                        <div
-                          className={`py-2 pl-8 cursor-pointer hover:bg-gray-100`}
+                        <Link
+                          href={`/san-pham/${item.parentUrl}?type=${item.typeUrl}`}
+                          className={`py-2 pl-8 cursor-pointer hover:bg-gray-100 flex flex-col`}
                           key={idx}
                         >
                           {item.type}
-                        </div>
+                        </Link>
                       ))}
                     </div>
                   )}
@@ -107,7 +96,7 @@ const Category = ({ Data }: any) => {
         </div>
         <div className="w-full bg-gray-50">
           <div className="p-2  flex flex-col gap-5">
-            {Data.slice(0, 5).map((item: any, idx: number) => (
+            {Products.slice(0, 5).map((item: any, idx: number) => (
               <div
                 key={idx}
                 className="grid grid-cols-3 gap-5 cursor-pointer hover:shadow-lg "
@@ -161,11 +150,14 @@ const Category = ({ Data }: any) => {
 
                   const markup = { __html: truncatedContent };
                   const DetailPostDate = moment
-                    .unix(Data[0]?.createdAt.seconds)
+                    .unix(item.createdAt.seconds)
                     .format("MMMM DD, YYYY");
                   return (
                     <SwiperSlide key={idx}>
-                      <div className="cursor-pointer  ">
+                      <Link
+                        href={`/bai-viet/${item.topicurl}`}
+                        className="cursor-pointer  "
+                      >
                         <div className="h-[145px] w-full overflow-hidden">
                           <img
                             src={item.image}
@@ -194,7 +186,7 @@ const Category = ({ Data }: any) => {
                             [Đọc tiếp...]
                           </div>
                         </div>
-                      </div>
+                      </Link>
                     </SwiperSlide>
                   );
                 })}

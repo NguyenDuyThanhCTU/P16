@@ -17,7 +17,7 @@ import {
 import { addDocument } from "@config/Services/Firebase/FireStoreDB";
 
 import TextEditor from "@components/admin/Item/CKEditor/TextEditor";
-import { TypeProductItems } from "@assets/item";
+import { TypeProductItems, TypeProductItems2 } from "@assets/item";
 
 const AddProduct = ({}) => {
   const [imageUrl, setImageUrl] = useState<string | undefined>();
@@ -32,7 +32,8 @@ const AddProduct = ({}) => {
   const [typeUrl, setTypeUrl] = useState<string | undefined>();
   const [parentUrl, setParentUrl] = useState<string | undefined>();
   const [ListSubImage, setListSubImage] = useState<any>([]);
-
+  const [isParent2, setIsParent2] = useState<any>();
+  const [parent2Url, setParent2Url] = useState<any>();
   const [ProductFunction, setProductFunction] = useState<any>();
   const [ProductFunctionUrl, setProductFunctionUrl] = useState<any>();
   const [ProductPrice, setProductPrice] = useState<any>();
@@ -54,6 +55,7 @@ const AddProduct = ({}) => {
       const formattedType = convertToCodeFormat(isType);
       const formattedParent = convertToCodeFormat(isParent);
       const formattedTitle = convertToCodeFormat(Title);
+      const formattedParent2 = convertToCodeFormat(isParent2);
       if (formattedType) {
         setTypeUrl(formattedType);
       }
@@ -64,9 +66,12 @@ const AddProduct = ({}) => {
       if (formattedTitle) {
         setTitleUrl(formattedTitle);
       }
+      if (formattedParent2) {
+        setParent2Url(formattedParent2);
+      }
     };
     handleChange();
-  }, [isType, isParent, isChildren, Title]);
+  }, [isType, isParent, isChildren, Title, isParent2]);
 
   const handleDiscard = () => {
     setTitle("");
@@ -100,6 +105,8 @@ const AddProduct = ({}) => {
         typeUrl: typeUrl,
         parent: isParent,
         parentUrl: parentUrl,
+        parent2: isParent2,
+        parent2Url: parent2Url,
         state: "Còn hàng",
         url: titleUrl,
         sale: {
@@ -249,12 +256,12 @@ const AddProduct = ({}) => {
             <div className="  flex flex-col gap-3">
               <div className="flex flex-col gap-2 w-full">
                 <div className="flex flex-col gap-2">
-                  <label className="text-md font-medium ">Mục bài viết:</label>
+                  <label className="text-md font-medium ">Mục 1:</label>
                   <select
                     className="outline-none lg:w-650 border-2 border-gray-200 text-md capitalize lg:p-4 p-2 rounded cursor-pointer"
                     onChange={(e) => setIsParent(e.target.value)}
                   >
-                    <option> -- Chọn mục bài viết --</option>
+                    <option> -- Chọn mục 1 --</option>
 
                     {TypeProductItems.map((item, idx) => (
                       <option
@@ -284,6 +291,25 @@ const AddProduct = ({}) => {
                       ))}
                   </Select>
                 </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-md font-medium ">Mục 2:</label>
+                <select
+                  className="outline-none lg:w-650 border-2 border-gray-200 text-md capitalize lg:p-4 p-2 rounded cursor-pointer"
+                  onChange={(e) => setIsParent2(e.target.value)}
+                >
+                  <option> -- Chọn mục 2 --</option>
+
+                  {TypeProductItems2.map((item, idx) => (
+                    <option
+                      key={idx}
+                      className=" outline-none capitalize bg-white text-gray-700 text-md p-2 hover:bg-slate-300"
+                      value={item.label}
+                    >
+                      {item.label}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
           </div>

@@ -14,10 +14,13 @@ export async function getDataByTypeProps(
   field: string,
   id: string
 ) {
-  const Data = await JSON.parse(
-    JSON.stringify(await getDocumentsByField(Collection, field, id))
-  );
-  return Data;
+  if (id === undefined) return;
+  else {
+    const Data = await JSON.parse(
+      JSON.stringify(await getDocumentsByField(Collection, field, id))
+    );
+    return Data;
+  }
 }
 
 export async function getAllDataProps(Collection: string) {

@@ -55,10 +55,7 @@ const ListPost: React.FC = () => {
           <p>hình ảnh</p>
         </div>
 
-        {Posts?.filter(
-          (item: any) =>
-            item.url === "cong-trinh-thuc-te" || item.url === "dich-vu"
-        ).map((data: PostData, idx: number) => {
+        {Posts.map((data: PostData, idx: number) => {
           return (
             <div key={data.id} className="grid cols-4 py-4   items-center">
               <p>{idx + 1}</p>

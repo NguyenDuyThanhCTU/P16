@@ -316,6 +316,49 @@ export const TypeProductItems = [
     label: "Đặc sản 3 miền",
     value: "dac-san-3-mien",
   },
+  {
+    label: "Gạo-Đồ khô-TP Đóng hộp",
+    value: "gao-do-kho-tp-dong-hop",
+  },
+  {
+    label: "An toàn thực phẩm",
+    value: "an-toan-thuc-pham",
+  },
+  {
+    label: "Quà Tết",
+    value: "qua-tet",
+  },
+  {
+    label: "Ăn Ngon",
+    value: "an-ngon",
+  },
+  {
+    label: "Gói Thực Phẩm Theo Tháng",
+    value: "goi-thuc-pham-theo-thang",
+  },
+  {
+    label: "Tuyển dụng",
+    value: "tuyen-dung",
+  },
+];
+
+export const TypeProductItems2 = [
+  {
+    label: "Thực Phẩm Sạch Hot",
+    value: "thuc-pham-sach-hot",
+  },
+  {
+    label: "Hải Sản Hot",
+    value: "hai-san-hot",
+  },
+  {
+    label: "Hoa Quả Hot",
+    value: "hoa-qua-hot",
+  },
+  {
+    label: "Thịt Đặc sản",
+    value: "thit-dac-san",
+  },
 ];
 
 export const TypePostItems = [
@@ -334,6 +377,10 @@ export const TypePostItems = [
   {
     label: " Món Ngon",
     value: "mon-ngon",
+  },
+  {
+    label: "Tuyển Dụng",
+    value: "tuyen-dung",
   },
 ];
 

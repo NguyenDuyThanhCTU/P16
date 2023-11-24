@@ -7,16 +7,11 @@ const page = async () => {
   const Data = await getAllDataProps("products");
 
   return (
-    <div>
-      <div className="w-[1200px] mx-auto grid grid-cols-4 gap-5">
-        <div className="mt-10">
-          <Category Data={Data} />
-        </div>
-        <div className="col-span-3">
-          <Content Data={Data} />
-        </div>
+    <>
+      <div className="col-span-3">
+        <Content Data={Data} />
       </div>
-    </div>
+    </>
   );
 };
 
