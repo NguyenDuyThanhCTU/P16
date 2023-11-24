@@ -23,7 +23,7 @@ const layout: React.FC<ClientLayoutProps> = ({ children }) => {
     <div className="font-LexendDeca font-extralight">
       <Header />
 
-      <div className="z-0 relative ">
+      <div className="z-0 d:mt-0 p:mt-[84px] relative ">
         <div className="grid grid-cols-4 gap-5  w-[1200px] mx-auto ">
           <div className="mt-10">
             <div>
@@ -50,14 +50,14 @@ const layout: React.FC<ClientLayoutProps> = ({ children }) => {
         <div className="grid grid-cols-4 gap-5  w-[1200px] mx-auto ">
           {Object.keys(params).length > 0 ? (
             <>
-              <div className="col-span-4 mt-5">{children}</div>
+              <div className="col-span-4 mt-5 ">{children}</div>
             </>
           ) : (
             <>
-              <div className="mt-10">
+              <div className="mt-10 d:block p:hidden">
                 <Category />
               </div>
-              <div className="col-span-3">{children}</div>
+              <div className="col-span-3 ">{children}</div>
             </>
           )}
         </div>

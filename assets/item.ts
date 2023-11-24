@@ -249,20 +249,21 @@ export const SocialMediaCustom = [
 
 export const HeaderItems = [
   {
-    label: "Mua hàng",
-    value: "chinh-sach-dat-hang",
+    label: "Trang chủ",
+    value: "trang-chu",
   },
   {
-    label: "Khuyến mãi",
-    value: "khuyen-mai",
+    label: "Sản phẩm",
+    value: "san-pham",
   },
   {
-    label: "Thực đơn",
-    value: "thuc-don",
+    label: "Bài viết",
+    value: "bai-viet",
   },
+
   {
-    label: "Blog",
-    value: "blog",
+    label: "Tuyển dụng",
+    value: "tuyen-dung",
   },
 ];
 

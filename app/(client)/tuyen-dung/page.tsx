@@ -6,7 +6,7 @@ import { AiOutlineClockCircle, AiOutlineUser } from "react-icons/ai";
 
 const RecruitmentPage = async () => {
   const Data = await getAllDataProps("posts");
-  console.log(Data);
+
   return (
     <div className="mt-9">
       <h2 className="font-normal py-3 text-[24px] uppercase border-b w-full ">

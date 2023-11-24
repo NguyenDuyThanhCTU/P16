@@ -21,7 +21,7 @@ const Content = ({ Data }: any) => {
 
   return (
     <div className="flex flex-col">
-      <div className="w-full">
+      <div className="w-full d:block p:hidden">
         <Swiper
           spaceBetween={30}
           loop={true}
