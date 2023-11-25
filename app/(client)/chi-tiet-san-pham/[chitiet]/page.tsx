@@ -1,6 +1,12 @@
 import ProductDetail from "@components/client/Product/ProductDetail";
 import { getDataByTypeProps } from "@lib/get-data";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "LachMarket",
+  description: "LachMarket",
+};
 
 const ProductDetailPage = async ({
   params,

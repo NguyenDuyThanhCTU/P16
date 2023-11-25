@@ -254,7 +254,7 @@ export const HeaderItems = [
   },
   {
     label: "Sản phẩm",
-    value: "san-pham",
+    value: "san-pham/rau-sach",
   },
   {
     label: "Bài viết",
@@ -298,7 +298,7 @@ export const ToolsTipsSocialMediaItems = [
 
 export const TypeProductItems = [
   {
-    label: "Rau Sạch",
+    label: "Rau Củ Quả Sạch",
     value: "rau-sach",
   },
   {

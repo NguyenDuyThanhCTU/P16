@@ -21,7 +21,7 @@ const Content = ({ Data }: any) => {
 
   return (
     <div className="flex flex-col">
-      <div className="w-full d:block p:hidden">
+      <div className="w-full ">
         <Swiper
           spaceBetween={30}
           loop={true}
@@ -35,7 +35,7 @@ const Content = ({ Data }: any) => {
           modules={[]}
           className="mySwiper"
         >
-          <div className="">
+          <div className="w-full flex justify-center">
             {Slides.map((item: any, idx: number) => (
               <SwiperSlide key={idx}>
                 <div className="flex justify-center">
@@ -51,7 +51,7 @@ const Content = ({ Data }: any) => {
         </Swiper>
       </div>
       <DisplayProduct Data={feshFood} topic="Thực phẩm sạch hot" />
-      <div className="grid grid-cols-3 gap-10 mt-5">
+      <div className="grid p:grid-cols-2 d:grid-cols-3 gap-10 mt-5">
         {Videos.map((video: any, idx: number) => (
           <div key={idx} className="h-[200px] flex items-center bg-black">
             <iframe

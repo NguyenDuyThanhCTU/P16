@@ -1,10 +1,16 @@
 import PostsCategory from "@components/client/Posts/PostsCategory";
 import { getAllDataProps, getDataByTypeProps } from "@lib/get-data";
 import moment from "moment";
+import { Metadata } from "next";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { AiOutlineClockCircle, AiOutlineUser } from "react-icons/ai";
+
+export const metadata: Metadata = {
+  title: "LachMarket",
+  description: "LachMarket",
+};
 
 const PostDetailPage = async ({ params }: { params: { slug: string } }) => {
   const Data = await getDataByTypeProps("posts", "topicurl", params.slug);
@@ -45,7 +51,7 @@ const PostDetailPage = async ({ params }: { params: { slug: string } }) => {
                 </div>
               </div>
             </div>
-            {markup && (
+            {Data[0]?.content && (
               <div
                 className="font-LexendDeca font-extralight mt-5"
                 dangerouslySetInnerHTML={markup}

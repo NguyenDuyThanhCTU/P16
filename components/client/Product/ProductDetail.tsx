@@ -78,7 +78,7 @@ const ProductDetail = ({ Data, SimilarProduct }: any) => {
   return (
     <div className="flex flex-col gap-5  d:w-[1300px] d:mx-auto p:w-auto p:mx-2 pb-14">
       <div>
-        <div className="grid grid-cols-2 d:mx-16 gap-16 font-LexendDeca d:flex-row p:flex-col p:mx-2 pb-14">
+        <div className="grid p:grid-cols-1 d:grid-cols-2 d:mx-16 gap-16 font-LexendDeca d:flex-row p:flex-col p:mx-2 pb-14">
           <div className=" rounded-lg d:h-max p:h-auto overflow-hidden">
             <div className="w-full flex justify-center">
               <Image.PreviewGroup>
@@ -178,7 +178,7 @@ const ProductDetail = ({ Data, SimilarProduct }: any) => {
               Sản phẩm liên quan
             </h3>
             <div>
-              {SimilarProduct?.map((item: any, idx: number) => (
+              {SimilarProduct?.slice(0, 8).map((item: any, idx: number) => (
                 <Link href={`/${path}/chi-tiet-san-pham/${item.url}`}>
                   <div
                     className="flex gap-3 py-3 border-b hover:bg-gray-100 duration-300"

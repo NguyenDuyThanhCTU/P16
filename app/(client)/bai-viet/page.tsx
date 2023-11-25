@@ -1,8 +1,13 @@
 import { getAllDataProps, getDataByTypeProps } from "@lib/get-data";
 import moment from "moment";
+import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
 import { AiOutlineClockCircle, AiOutlineUser } from "react-icons/ai";
+export const metadata: Metadata = {
+  title: "LachMarket",
+  description: "LachMarket",
+};
 
 const PostPage = async () => {
   const Data = await getAllDataProps("posts");
@@ -42,7 +47,7 @@ const PostPage = async () => {
                   </div>
                   <div className="p-2">
                     <h2 className="font-normal mt-2 truncate2">{item.topic}</h2>
-                    <div className="flex py-1 gap-5 ">
+                    <div className="flex d:flex-row p:flex-col py-1 gap-5 ">
                       <div className="flex items-center gap-1 text-gray-400 ]">
                         <AiOutlineUser />
                         <p className="">lachmarket.com</p>

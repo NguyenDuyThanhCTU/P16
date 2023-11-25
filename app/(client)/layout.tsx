@@ -15,6 +15,7 @@ import React from "react";
 type ClientLayoutProps = {
   children: React.ReactNode;
 };
+
 const layout: React.FC<ClientLayoutProps> = ({ children }) => {
   const pathname = usePathname();
   const params = useParams();
@@ -23,17 +24,17 @@ const layout: React.FC<ClientLayoutProps> = ({ children }) => {
     <div className="font-LexendDeca font-extralight">
       <Header />
 
-      <div className="z-0 d:mt-0 p:mt-[84px] relative ">
-        <div className="grid grid-cols-4 gap-5  w-[1200px] mx-auto ">
-          <div className="mt-10">
-            <div>
+      <div className="z-0 d:mt-0 p:mt-[84px] relative py-5">
+        <div className="grid grid-cols-4 gap-5  d:w-[1200px] p:mx-2 d:mx-auto p:w-auto">
+          <div className="mt-10 d:col-span-1 p:col-span-4">
+            <div className="w-full flex justify-center">
               <img
                 src="https://bizweb.dktcdn.net/100/371/178/themes/743610/assets/logo.png?1698827078537"
                 alt="banner"
               />
             </div>
           </div>
-          <div className="col-span-3">
+          <div className="col-span-3 p:hidden d:block">
             {" "}
             <div>
               <img
@@ -47,7 +48,7 @@ const layout: React.FC<ClientLayoutProps> = ({ children }) => {
           {" "}
           <PathMap />{" "}
         </div>
-        <div className="grid grid-cols-4 gap-5  w-[1200px] mx-auto ">
+        <div className="grid grid-cols-4 gap-5  p:w-auto d:w-[1200px] p:mx-2 d:mx-auto  ">
           {Object.keys(params).length > 0 ? (
             <>
               <div className="col-span-4 mt-5 ">{children}</div>
@@ -57,17 +58,18 @@ const layout: React.FC<ClientLayoutProps> = ({ children }) => {
               <div className="mt-10 d:block p:hidden">
                 <Category />
               </div>
-              <div className="col-span-3 ">{children}</div>
+              <div className="p:col-span-4 d:col-span-3 ">{children}</div>
             </>
           )}
         </div>
       </div>
-      {/* <Footer />
+
+      <Footer />
       <div className="relative z-50">
         <OnTop />
         <Hotline />
       </div>
-      <Copyright /> */}
+      <Copyright />
     </div>
   );
 };

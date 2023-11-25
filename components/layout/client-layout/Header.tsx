@@ -26,7 +26,7 @@ const Header = () => {
 
   return (
     <div className="bg-maingreen text-mainyellow">
-      <div className="w-[1200px] mx-auto h-[60px] d:flex justify-between items-center p:hidden">
+      <div className="w-[1200px] mx-auto  h-[85px] d:flex justify-between items-center p:hidden">
         <div className="flex items-center  gap-2">
           <div>
             <img
@@ -60,9 +60,12 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-mainyellow border-mainyellow py-3 px-6 text-maingreen rounded-r-full cursor-pointer">
+            <Link
+              href={`/san-pham?search=${search}`}
+              className="bg-mainyellow border-mainyellow py-3 px-6 text-maingreen rounded-r-full cursor-pointer"
+            >
               <FaSearch />
-            </div>
+            </Link>
           </div>
           {search && (
             <div className="absolute w-full bg-maingreen top-full flex flex-col shadow-inner z-50 mt-2">
@@ -81,7 +84,9 @@ const Header = () => {
           )}
         </div>
         <Link href={`/bai-viet/tuyen-dung`} className="font-normal">
-          Tuyển dụng
+          <div className="border border-mainyellow py-2 px-5 uppercase rounded-lg hover:border-yellow-600 hover:text-yellow-600 duration-300">
+            Tuyển dụng
+          </div>
         </Link>
       </div>
       <div className="d:hidden p:block bg-maingreen ">

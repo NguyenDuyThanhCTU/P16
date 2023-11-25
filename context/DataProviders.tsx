@@ -18,7 +18,7 @@ export type DataContextType = {
   setVideos: (video: any) => void;
   Posts: any;
   setPosts: (post: any) => void;
-  Accounts: [];
+  Accounts: any;
   setAccounts: (account: any) => void;
   UpdateId: any;
   setUpdateId: (update: any) => void;

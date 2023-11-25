@@ -14,7 +14,6 @@ import Link from "next/link";
 const Category = () => {
   const [show, setShow] = React.useState<any>(0);
   const { productTypes, Posts, Products } = useData();
-  console.log(Posts);
   const HandleShow = (idx: number) => {
     if (show === idx) {
       setShow(0);

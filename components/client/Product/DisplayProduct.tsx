@@ -20,7 +20,7 @@ const DisplayProduct = ({ Data, topic }: any) => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-3 mt-5">
+      <div className="grid p:grid-cols-2 d:grid-cols-4 gap-3 mt-5">
         {Data.map((item: any, idx: number) => (
           <div
             key={idx}

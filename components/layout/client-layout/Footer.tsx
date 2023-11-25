@@ -1,9 +1,12 @@
+"use client";
+import { useData } from "@context/DataProviders";
 import React from "react";
 
 const Footer = () => {
+  const { Branches } = useData();
   return (
     <div className="bg-maingreen text-mainyellow py-10">
-      <div className="w-[1200px] mx-auto grid grid-cols-4 gap-5">
+      <div className="p:w-auto p:mx-2 d:w-[1200px] d:mx-auto grid p:grid-cols-1 d:grid-cols-4 gap-5">
         <div>
           <h2 className="uppercase font-normal ">GIỚI THIỆU VỀ CLEVERFOOD</h2>
           <div className="mt-4 text-white font-light">
