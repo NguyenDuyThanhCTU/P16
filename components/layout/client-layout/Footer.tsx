@@ -3,10 +3,10 @@ import { useData } from "@context/DataProviders";
 import React from "react";
 
 const Footer = () => {
-  const { Branches } = useData();
+  const { ContactData } = useData();
   return (
     <div className="bg-maingreen text-mainyellow py-10">
-      <div className="p:w-auto p:mx-2 d:w-[1200px] d:mx-auto grid p:grid-cols-1 d:grid-cols-4 gap-5">
+      <div className="p:w-auto p:mx-2 d:w-[1200px] d:mx-auto grid p:grid-cols-1 d:grid-cols-4 gap-10">
         <div>
           <h2 className="uppercase font-normal ">GIỚI THIỆU VỀ CLEVERFOOD</h2>
           <div className="mt-4 text-white font-light">
@@ -23,15 +23,34 @@ const Footer = () => {
         </div>
         <div>
           <h2 className="uppercase font-normal ">ĐỊA CHỈ CỬA HÀNG</h2>
-          <div className="mt-4 text-white font-light"></div>
+          <div className="mt-4 text-white font-light">
+            {ContactData.address}
+          </div>
         </div>
         <div>
           <h2 className="uppercase font-normal ">CLICK ĐỂ VÀO GOOGLE MAPS</h2>
-          <div className="mt-4 text-white font-light"></div>
+          <div className="mt-4 text-white font-light py-2">
+            <iframe
+              src={ContactData.location}
+              scrolling="no"
+              className="outline-none"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            ></iframe>
+          </div>
         </div>
         <div>
-          <h2 className="uppercase font-normal ">TỔNG ĐÀI: 0962.243.863</h2>
-          <div className="mt-4 text-white font-light">test</div>
+          <h2 className="uppercase font-normal ">Fanpage LachMarket</h2>
+          <div className="mt-4 text-white font-light">
+            {" "}
+            <iframe
+              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Flachmarket&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+              width="340"
+              className="outline-none"
+              height="300"
+              scrolling="no"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            ></iframe>
+          </div>
         </div>
       </div>
     </div>
